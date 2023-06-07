@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block head_title %} Tablero de ajedrez {% endblock%}
+
+{% block style_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <h2>Tablero de ajedrez</h2>
+
+    <table>
+        {% for i in range(0, fila): %}
+        <tr>
+            {% for j in range(0, columna): %}
+            <td class="color1"></td>
+            <td class="color2"></td>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for j in range(0, columna): %}
+            <td class="color2"></td>
+            <td class="color1"></td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
