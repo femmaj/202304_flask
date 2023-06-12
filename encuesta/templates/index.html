@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block head_title %}Encuesta Dojo{% endblock %}
+
+{% block content %}
+<div class="text-center my-3">
+    <h2>Encuesta Dojo</h2>
+</div>
+<div class="card text-bg-light" style="width: 500px;">
+    <div class="card-body">
+        <form action="/result" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" id="name" name="nombre" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Ubicación Dojo</label>
+                <select name="ubicacion" id="location" class="form-select" required>
+                    <option value="" selected>Seleccione una ubicación</option>
+                    <option value="Santiago">Santiago</option>
+                    <option value="Buenos Aires">Buenos Aires</option>
+                    <option value="Londres">Londres</option>
+                    <option value="Ciudad de Mexico">Ciudad de Mexico</option>
+                    <option value="Online">Online</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="language" class="form-label">Lenguaje favorito</label>
+                <select name="lenguaje" id="language" class="form-select" required>
+                    <option value="" selected>Seleccione un lenguaje</option>
+                    <option value="Python">Python</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Java">Java</option>
+                    <option value="C++">C++</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="comment" class="form-label">Comentario (opcional)</label>
+                <textarea name="comentario" id="comment" class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success float-end">Enviar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
